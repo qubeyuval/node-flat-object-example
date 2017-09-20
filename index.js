@@ -7,7 +7,7 @@ const data = {
         },
         au2: {
             name: 'user2 orgA'
-        },
+        }
     },
     orgB: {
         bu1: {
@@ -18,7 +18,7 @@ const data = {
         },
         bu3: {
             name: 'user3 orgB'
-        },
+        }
     }
 }
 
@@ -38,10 +38,9 @@ const getUserAsync = async (uid) => {
 
 const getAllUsers = async (userIds) => {
     const arr = [];
-    for (var uid in userIds) {
-        arr.push(await getUser(userIds[uid]));
+    for(let uid of userIds) {
+        arr.push(await getUser(uid));
     }
-
     return arr;
 }
 
